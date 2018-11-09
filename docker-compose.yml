@@ -1,13 +1,13 @@
 version: '3'
 services:
-  postgres:
-    image: postgres:alpine
-    environment:
-      POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-    expose:
-      - 5432
+  #postgres:
+  #  image: postgres:alpine
+  #  environment:
+  #    POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+  #  expose:
+  #    - 5432
   fwla-center:
-    image: ihrigb/fwla-center:dev
+    image: ihrigb/fwla-center:0.0.1
     container_name: fwla-center
     expose:
       - 8080
@@ -21,12 +21,12 @@ services:
       - mail.receive.blacklist=${MAIL_RECEIVE_BLACKLIST}
       - app.weather.openweathermap.apiKey=${APP_WEATHER_OPENWEATHERMAP_APIKEY}
   fwla-center-admin:
-    image: ihrigb/fwla-center-admin:dev
+    image: ihrigb/fwla-center-admin:0.0.1
     container_name: fwla-center-admin
     expose:
       - 5000
   fwla-center-display:
-    image: ihrigb/fwla-center-display:dev
+    image: ihrigb/fwla-center-display:0.0.1
     container_name: fwla-center-display
     expose:
       - 5000
