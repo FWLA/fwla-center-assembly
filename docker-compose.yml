@@ -11,8 +11,8 @@ services:
     container_name: fwla-center
     expose:
       - 8080
-    depends_on:
-      - postgres
+  #  depends_on:
+  #    - postgres
     environment:
       - mail.receive.host=${MAIL_RECEIVE_HOST}
       - mail.receive.username=${MAIL_RECEIVE_USERNAME}
