@@ -8,34 +8,6 @@ services:
   #    - 5432
   #  depends_on:
   #    - postgres
-  elasticsearch:
-    build: elk/elasticsearch/
-    container_name: elasticsearch
-    expose:
-      - 8080
-    environment:
-      ES_JAVA_OPTS: "-Xms1g -Xmx1g"
-  logstash:
-    build: elk/logstash/
-    container_name: logstash
-    command: -f /etc/logstash/conf.d/
-    volumes:
-      - ./elk/logstash/config:/etc/logstash/conf.d
-    expose:
-      - 9999
-    depends_on:
-      - elasticsearch
-  kibana:
-    build: elk/kibana/
-    container_name: kibana
-    volumes:
-      - ./elk/kibana/config/:/opt/kibana/config/
-    expose:
-      - 5601
-    ports:
-      - 5601:5601
-    depends_on:
-      - elasticsearch
   fwla-center:
     image: ihrigb/fwla-center:${FWLA_CENTER_VERSION}
     container_name: fwla-center
@@ -48,8 +20,6 @@ services:
       - mail.receive.whitelist=${MAIL_RECEIVE_WHITELIST}
       - mail.receive.blacklist=${MAIL_RECEIVE_BLACKLIST}
       - app.weather.openweathermap.apiKey=${APP_WEATHER_OPENWEATHERMAP_APIKEY}
-    depends_on:
-      - logstash
   fwla-center-admin:
     image: ihrigb/fwla-center-admin:${FWLA_CENTER_VERSION}
     container_name: fwla-center-admin
@@ -71,4 +41,3 @@ services:
       - fwla-center
       - fwla-center-admin
       - fwla-center-display
-      - kibana
