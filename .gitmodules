@@ -1,0 +1,9 @@
+[submodule "fwla-center"]
+	path = fwla-center
+	url = git@github.com:FWLA/fwla-center.git
+[submodule "fwla-center-display"]
+	path = fwla-center-display
+	url = git@github.com:FWLA/fwla-center-display.git
+[submodule "fwla-center-admin"]
+	path = fwla-center-admin
+	url = git@github.com:FWLA/fwla-center-admin.git
