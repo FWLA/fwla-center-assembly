@@ -19,6 +19,9 @@ services:
       - mail.receive.password=${MAIL_RECEIVE_PASSWORD}
       - mail.receive.whitelist=${MAIL_RECEIVE_WHITELIST}
       - mail.receive.blacklist=${MAIL_RECEIVE_BLACKLIST}
+      - app.geo.home.coordinate.latitude=${APP_GEO_HOME_LATITUDE}
+      - app.geo.home.coordinate.longitude=${APP_GEO_HOME_LONGITUDE}
+      - app.geo.ors.apiKey=${APP_GEO_ORS_APIKEY}
       - app.weather.openweathermap.apiKey=${APP_WEATHER_OPENWEATHERMAP_APIKEY}
       - spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults = false
       - spring.jpa.database-platform=org.hibernate.dialect.PostgreSQL9Dialect
