@@ -19,6 +19,11 @@ cd fwla-center-display
 jq '.version = $newVers' --arg newVers $VERS package.json > package.tmp.json && mv package.tmp.json package.json
 cd ..
 
+# Update fwla-center-map
+cd fwla-center-map
+jq '.version = $newVers' --arg newVers $VERS package.json > package.tmp.json && mv package.tmp.json package.json
+cd ..
+
 git submodule foreach git add -A
 git submodule foreach git commit -m "Update version to $VERS"
 git submodule foreach git push

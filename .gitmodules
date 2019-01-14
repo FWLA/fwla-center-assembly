@@ -7,3 +7,6 @@
 [submodule "fwla-center-admin"]
 	path = fwla-center-admin
 	url = git@github.com:FWLA/fwla-center-admin.git
+[submodule "fwla-center-map"]
+	path = fwla-center-map
+	url = git@github.com:FWLA/fwla-center-map.git
