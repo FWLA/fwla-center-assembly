@@ -35,11 +35,22 @@ services:
     container_name: fwla-center-admin
     expose:
       - 5000
+    depends_on:
+      - fwla-center
   fwla-center-display:
     image: ihrigb/fwla-center-display:${FWLA_CENTER_VERSION}
     container_name: fwla-center-display
     expose:
       - 5000
+    depends_on:
+      - fwla-center
+  fwla-center-map:
+    image: ihrigb/fwla-center-map:${FWLA_CENTER_VERSION}
+    container_name: fwla-center-map
+    expose:
+      - 5000
+    depends_on:
+      - fwla-center
   reverse-proxy:
     image: nginx:latest
     container_name: reverse-proxy
@@ -51,3 +62,4 @@ services:
       - fwla-center
       - fwla-center-admin
       - fwla-center-display
+      - fwla-center-map
