@@ -17,8 +17,8 @@ services:
       - mail.receive.host=${MAIL_RECEIVE_HOST}
       - mail.receive.username=${MAIL_RECEIVE_USERNAME}
       - mail.receive.password=${MAIL_RECEIVE_PASSWORD}
-      - mail.receive.whitelist=${MAIL_RECEIVE_WHITELIST}
-      - mail.receive.blacklist=${MAIL_RECEIVE_BLACKLIST}
+      - mail.receive.whitelistHot=${MAIL_RECEIVE_HOT_WHITELIST}
+      - mail.receive.whitelistTraining=${MAIL_RECEIVE_TRAINING_WHITELIST}
       - app.geo.home.coordinate.latitude=${APP_GEO_HOME_LATITUDE}
       - app.geo.home.coordinate.longitude=${APP_GEO_HOME_LONGITUDE}
       - app.geo.ors.apiKey=${APP_GEO_ORS_APIKEY}
