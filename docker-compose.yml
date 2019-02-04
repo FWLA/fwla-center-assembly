@@ -14,20 +14,20 @@ services:
     expose:
       - 8080
     environment:
-      - app.mail.receive.host=${APP_MAIL_RECEIVE_HOST}
-      - app.mail.receive.username=${APP_MAIL_RECEIVE_USERNAME}
-      - app.mail.receive.password=${APP_MAIL_RECEIVE_PASSWORD}
-      - app.mail.receive.whitelistHot=${APP_MAIL_RECEIVE_HOT_WHITELIST}
-      - app.mail.receive.whitelistTraining=${APP_MAIL_RECEIVE_TRAINING_WHITELIST}
-      - app.geo.home.coordinate.latitude=${APP_GEO_HOME_LATITUDE}
-      - app.geo.home.coordinate.longitude=${APP_GEO_HOME_LONGITUDE}
-      - app.geo.ors.apiKey=${APP_GEO_ORS_APIKEY}
-      - app.weather.openweathermap.apiKey=${APP_WEATHER_OPENWEATHERMAP_APIKEY}
-      - spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults = false
-      - spring.jpa.database-platform=org.hibernate.dialect.PostgreSQL9Dialect
-      - spring.datasource.username=${POSTGRES_USERNAME}
-      - spring.datasource.password=${POSTGRES_PASSWORD}
-      - "spring.datasource.url=jdbc:postgresql://postgres:5432/${POSTGRES_DB}"
+      - APP_MAIL_RECEIVE_HOST=${APP_MAIL_RECEIVE_HOST}
+      - APP_MAIL_RECEIVE_USERNAME=${APP_MAIL_RECEIVE_USERNAME}
+      - APP_MAIL_RECEIVE_PASSWORD=${APP_MAIL_RECEIVE_PASSWORD}
+      - APP_MAIL_RECEIVE_WHITELISTHOT=${APP_MAIL_RECEIVE_HOT_WHITELIST}
+      - APP_MAIL_RECEIVE_WHITELISTTRAINING=${APP_MAIL_RECEIVE_TRAINING_WHITELIST}
+      - APP_GEO_HOME_COORDINATE_LATITUDE=${APP_GEO_HOME_LATITUDE}
+      - APP_GEO_HOME_COORDINATE_LONGITUDE=${APP_GEO_HOME_LONGITUDE}
+      - APP_GEO_ORS_APIKEY=${APP_GEO_ORS_APIKEY}
+      - APP_WEATHER_OPENWEATHERMAP_APIKEY=${APP_WEATHER_OPENWEATHERMAP_APIKEY}
+      - SPRING_JPA_PROPERTIES_HIBERNATE_TEMP_USE_JDBC_METADATA_DEFAULTS = false
+      - SPRING_JPA_DATABASE_PLATFORM=org.hibernate.dialect.PostgreSQL9Dialect
+      - SPRING_DATASOURCE_USERNAME=${POSTGRES_USERNAME}
+      - SPRING_DATASOURCE_PASSWORD=${POSTGRES_PASSWORD}
+      - "SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/${POSTGRES_DB}"
     depends_on:
       - postgres
   fwla-center-admin:
