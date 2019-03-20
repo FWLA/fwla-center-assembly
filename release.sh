@@ -47,3 +47,7 @@ docker push ihrigb/fwla-center-display:$relVers
 docker push ihrigb/fwla-center-map:$relVers
 
 /bin/bash ./update-version.sh $nextVers
+
+git add -A
+git commit -m "Released $relVers."
+git push
