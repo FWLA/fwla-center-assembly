@@ -7,6 +7,7 @@ git submodule foreach git pull
 # Update fwla-center
 cd fwla-center
 ./mvnw versions:set -DnewVersion=$VERS -DgenerateBackupPoms=false
+sed -i -E "s/^(ARG JAR_FILE=target\/fwla-center-).*(.jar).*$/\1$VERS\2/" Dockerfile
 cd ..
 
 # Update fwla-center-admin
