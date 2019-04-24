@@ -1,5 +1,8 @@
 #!/bin/bash
 
+set -u
+set -e
+
 relVers=$1
 nextVers=$2
 

@@ -1,5 +1,8 @@
 #!/bin/bash
 
+set -u
+set -e
+
 git submodule foreach git pull
 
 cd fwla-center

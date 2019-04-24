@@ -1,5 +1,8 @@
 #!/bin/bash
 
+set -u
+set -e
+
 VERS=$1
 
 git submodule foreach git pull
