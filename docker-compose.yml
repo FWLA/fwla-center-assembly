@@ -24,7 +24,7 @@ services:
       - APP_GEO_HOME_COORDINATE_LONGITUDE=${APP_GEO_HOME_LONGITUDE}
       - APP_GEO_ORS_APIKEY=${APP_GEO_ORS_APIKEY}
       - APP_WEATHER_OPENWEATHERMAP_APIKEY=${APP_WEATHER_OPENWEATHERMAP_APIKEY}
-      - SPRING_JPA_PROPERTIES_HIBERNATE_TEMP_USE_JDBC_METADATA_DEFAULTS = false
+      - SPRING_JPA_PROPERTIES_HIBERNATE_TEMP_USE_JDBC_METADATA_DEFAULTS=false
       - SPRING_JPA_DATABASE_PLATFORM=org.hibernate.dialect.PostgreSQL9Dialect
       - SPRING_DATASOURCE_USERNAME=${POSTGRES_USERNAME}
       - SPRING_DATASOURCE_PASSWORD=${POSTGRES_PASSWORD}
@@ -54,7 +54,7 @@ services:
       - fwla-center
   reverse-proxy:
     image: nginx:latest
-    container_name: reverse-proxy
+    container_name: fwla-center-gateway
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
       - ./index.html:/www/data/index.html
